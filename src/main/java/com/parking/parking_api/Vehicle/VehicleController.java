@@ -1,9 +1,10 @@
 package com.parking.parking_api.Vehicle;
 
 import org.springframework.web.bind.annotation.RestController;
+
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +21,7 @@ public class VehicleController {
     }
 
     @PostMapping("/vehicles")
-    public void createVehicle(@RequestBody Vehicle vehicle) {
+    public void createVehicle(@Valid @RequestBody Vehicle vehicle) {
         vehicleService.createVehicle(vehicle);
     }
 

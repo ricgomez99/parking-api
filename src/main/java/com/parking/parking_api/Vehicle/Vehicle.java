@@ -12,6 +12,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,10 +33,20 @@ public class Vehicle {
     private String vehicleId;
 
     @Basic
-    private String color;
-    private String model;
+    @NotBlank(message = "CarPlate is required")
+    @Size(min = 3, max = 7)
     private String carPlate;
+
+    @NotBlank(message = "Color is required")
+    private String color;
+
+    @Positive(message = "Number of Doors must be a positive number")
+    @Min(3)
+    @Max(6)
     private int doors;
+
+    @NotBlank(message = "Model is required")
+    private String model;
     private String registrationDate;
 
     @OneToOne(cascade = CascadeType.ALL)

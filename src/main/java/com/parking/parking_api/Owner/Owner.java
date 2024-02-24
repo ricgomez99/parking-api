@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,6 +24,8 @@ public class Owner {
     private String ownerId;
 
     @Basic
+    @NotBlank(message = "Owner's name is required")
     private String firstName;
+    @NotBlank(message = "Owner's last name is required")
     private String lastName;
 }
