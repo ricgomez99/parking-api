@@ -20,6 +20,14 @@
 + Update existing vehicle and owner information
 + Delete registered vehicles or owners
 
+### API Endpoints
+
++ `GET /vehicles`: Get all registered vehicles details
++ `GET /vehicles/{id}`: Get a vehicle details by id
++ `POST /vehicles`: Register a new vehicle
++ `PUT /vehicles/{id}` Update vehicle details
++ `DELETE /vehicles/{id}` Delete a registered vehicle 
+
 ### Getting Started
 
 + To run the project locally, follow these steps:
