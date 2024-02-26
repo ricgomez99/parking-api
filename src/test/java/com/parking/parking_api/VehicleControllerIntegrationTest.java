@@ -1,7 +1,5 @@
 package com.parking.parking_api;
 
-import java.nio.charset.Charset;
-
 import org.springframework.http.MediaType;
 import org.hamcrest.core.Is;
 import org.junit.jupiter.api.Test;
